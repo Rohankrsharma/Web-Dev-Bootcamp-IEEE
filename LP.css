@@ -14,10 +14,8 @@ header{
     left: 0;
     width: 100%;
     padding: 20px;
-    background-color: aqua;
-}
-li {
-    list-style: none;
+    background-color: rgba(0, 0, 0, 0.1);
+    backdrop-filter:blur(20px);
 }
 .navbar{
     top: 0;
@@ -29,24 +27,40 @@ li {
     justify-content: space-between;
     font-family: cursive;
 }
-.navbar .logo {
+.navbar li {
+    list-style: none;
+}
+.logo {
     font-size: 2rem;
     font-weight: 600;
+    cursor: pointer;
+    color: brown;
+    text-decoration: none;
+    background-color: #fff;
+    border-radius: 6px;
+    padding: 8px;
+    transition: 0.3 ease;
 }
-
 .navbar .links{
     display: flex;
     gap: 40px;
 
 }
-.navbar a {
+.navbar ul li a {
     text-decoration: none;
     color: brown;
     font-weight: bold;
-    transition: 0.2 ease;
+    transition:all  0.3 ease;
+    letter-spacing: 1px ;
+    
 }
-.navbar a:hover{
+.navbar ul li a:hover{
     color:black;
+    background-color: #fff;
+    border-radius: 5px;
+    padding: 8px;
+    transition:all  0.2 ease;
+
 }
 section{
     display:contents;
@@ -88,7 +102,7 @@ background: #C06B3E;
     text-decoration: none;
     padding: 10px;
     background-color: white;
-    margin: 10px;
+    margin: 20px;
     border-radius: 50%;
 }
 .socials a i{
@@ -101,5 +115,51 @@ footer{
 }
 .footercontainer{
     width: 100%;
-
 }
+.mnubtn i{
+    color:#fff;
+    font-size: 25px;
+    cursor: pointer;
+    display: none;
+}
+.closemnubtn{
+    display: none;
+}
+#check{
+    display: none;
+}
+@media (max-width:950px){
+    .sidebar{
+        position: fixed;
+        top: 0px;
+        left:-1500%;
+        background: #111;
+        height: 100vh;
+        width: 100%;
+        display:block;
+        /* flex-direction: column; */
+        /* align-items: center;  */
+        /* justify-content: center;  */
+        transition: all 0.3 ease; 
+}
+.links{
+    position:fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+#check:checked ~ .sidebar {
+    display: flex;
+    left: 0%;
+}
+.navbar ul li{
+    margin: 10px;
+}
+.mnubtn i{
+    display: block;
+    justify-content: space-around;
+}
+.closemnubtn{
+    display: block;
+    cursor: pointer;
+}}
